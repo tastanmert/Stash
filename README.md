@@ -19,6 +19,16 @@ Stash gives you a temporary place to put files while you work. Shake the cursor 
   <img src="docs/screenshots/detail.png" width="400" alt="The shelf's file list">
 </p>
 
+## Download
+
+[**Download Stash for macOS →**](https://github.com/tastanmert/Stash/releases/latest)
+
+Open the DMG and drag Stash to Applications. Requires macOS 15 or later; Apple Silicon and Intel supported.
+
+**This build is ad-hoc signed, not notarized by Apple.** macOS may block the first launch. Only if you trust the download, use System Settings → Privacy & Security → Open Anyway after attempting to open it. Do not disable Gatekeeper. See the release notes for details and the SHA-256 checksum.
+
+İndirmek için yukarıdaki bağlantıyı kullanın. DMG'yi açıp Stash'i Uygulamalar'a sürükleyin. Sürüm Apple noter onaylı değildir; ilk açılışta macOS uyarısı çıkabilir. Ayrıntılar sürüm notlarında.
+
 ## Features
 
 **Shelves**
