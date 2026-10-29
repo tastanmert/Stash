@@ -1,0 +1,9 @@
+.build/
+build/
+.swiftpm/
+*.app
+.DS_Store
+*.dmg
+docs/reference/
+Stash.xcodeproj/
+docs/parity/

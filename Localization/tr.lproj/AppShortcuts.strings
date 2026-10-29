@@ -1,0 +1,19 @@
+/* Kısayollar eylemleri için Siri ve Spotlight ifadeleri. */
+
+"New ${applicationName} shelf" = "Yeni ${applicationName} rafı";
+"Start a new ${applicationName} shelf" = "Yeni bir ${applicationName} rafı başlat";
+"Create new ${applicationName} shelf" = "Yeni ${applicationName} rafı oluştur";
+"Open a new shelf in ${applicationName}" = "${applicationName} ile yeni raf aç";
+"New ${applicationName} shelf from clipboard" = "Panodan yeni ${applicationName} rafı";
+"Clipboard to ${applicationName} shelf" = "Panoyu ${applicationName} rafına koy";
+"Create shelf from clipboard in ${applicationName}" = "${applicationName} ile panodan raf oluştur";
+"Add to ${applicationName} shelf" = "${applicationName} rafına ekle";
+"Add files to ${applicationName}" = "${applicationName} uygulamasına dosya ekle";
+"Add selection to ${applicationName}" = "Seçimi ${applicationName} uygulamasına ekle";
+"Add items to ${applicationName}" = "${applicationName} uygulamasına öğe ekle";
+"Get files from ${applicationName} shelf" = "${applicationName} rafındaki dosyaları al";
+"Retrieve files from ${applicationName}" = "${applicationName} dosyalarını getir";
+"Fetch items from ${applicationName} shelf" = "${applicationName} rafındaki öğeleri getir";
+"Reopen last ${applicationName} shelf" = "Son ${applicationName} rafını yeniden aç";
+"Open last ${applicationName} shelf" = "Son ${applicationName} rafını aç";
+"Restore last ${applicationName} shelf" = "Son ${applicationName} rafını geri getir";

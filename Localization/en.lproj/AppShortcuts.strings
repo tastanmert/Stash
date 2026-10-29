@@ -1,0 +1,19 @@
+/* Siri and Spotlight phrases for the Shortcuts actions. */
+
+"New ${applicationName} shelf" = "New ${applicationName} shelf";
+"Start a new ${applicationName} shelf" = "Start a new ${applicationName} shelf";
+"Create new ${applicationName} shelf" = "Create new ${applicationName} shelf";
+"Open a new shelf in ${applicationName}" = "Open a new shelf in ${applicationName}";
+"New ${applicationName} shelf from clipboard" = "New ${applicationName} shelf from clipboard";
+"Clipboard to ${applicationName} shelf" = "Clipboard to ${applicationName} shelf";
+"Create shelf from clipboard in ${applicationName}" = "Create shelf from clipboard in ${applicationName}";
+"Add to ${applicationName} shelf" = "Add to ${applicationName} shelf";
+"Add files to ${applicationName}" = "Add files to ${applicationName}";
+"Add selection to ${applicationName}" = "Add selection to ${applicationName}";
+"Add items to ${applicationName}" = "Add items to ${applicationName}";
+"Get files from ${applicationName} shelf" = "Get files from ${applicationName} shelf";
+"Retrieve files from ${applicationName}" = "Retrieve files from ${applicationName}";
+"Fetch items from ${applicationName} shelf" = "Fetch items from ${applicationName} shelf";
+"Reopen last ${applicationName} shelf" = "Reopen last ${applicationName} shelf";
+"Open last ${applicationName} shelf" = "Open last ${applicationName} shelf";
+"Restore last ${applicationName} shelf" = "Restore last ${applicationName} shelf";

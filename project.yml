@@ -1,0 +1,43 @@
+# Xcode project for building Stash.app (scripts/build-app.sh generates it with XcodeGen).
+# Xcode is needed for the Shortcuts actions: only its build extracts the App Intents metadata.
+# Package.swift stays the way to run the tests (`swift test`).
+name: Stash
+options:
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGNING_ALLOWED: NO
+    DEAD_CODE_STRIPPING: YES
+targets:
+  StashCore:
+    type: library.static
+    platform: macOS
+    sources: [Sources/StashCore]
+    settings:
+      base:
+        PRODUCT_NAME: StashCore
+        PRODUCT_MODULE_NAME: StashCore
+  Stash:
+    type: application
+    platform: macOS
+    sources:
+      - Sources/Stash
+      - Localization
+    dependencies:
+      - target: StashCore
+      - sdk: Carbon.framework
+    settings:
+      base:
+        PRODUCT_NAME: Stash
+        PRODUCT_BUNDLE_IDENTIFIER: dev.merttastan.stash
+        INFOPLIST_FILE: Support/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        SWIFT_EMIT_CONST_VALUES: YES
+        ENABLE_HARDENED_RUNTIME: NO

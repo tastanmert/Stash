@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleName</key><string>Stash</string>
+  <key>CFBundleDisplayName</key><string>Stash</string>
+  <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+  <key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+  <key>CFBundleIconFile</key><string>AppIcon</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+  <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+  <key>CFBundleDevelopmentRegion</key><string>en</string>
+  <key>CFBundleLocalizations</key><array><string>en</string><string>tr</string></array>
+  <key>LSMinimumSystemVersion</key><string>15.0</string>
+  <key>LSApplicationCategoryType</key><string>public.app-category.productivity</string>
+  <key>LSUIElement</key><true/>
+  <key>NSHighResolutionCapable</key><true/>
+  <key>NSHumanReadableCopyright</key><string>© 2026 Mert Taştan</string>
+  <key>CFBundleURLTypes</key>
+  <array><dict>
+    <key>CFBundleURLName</key><string>dev.merttastan.stash</string>
+    <key>CFBundleURLSchemes</key><array><string>stash</string></array>
+  </dict></array>
+  <key>NSServices</key>
+  <array><dict>
+    <key>NSMenuItem</key><dict><key>default</key><string>Add to Stash</string></dict>
+    <key>NSMessage</key><string>addToStash</string>
+    <key>NSPortName</key><string>Stash</string>
+    <key>NSRequiredContext</key><dict/>
+    <key>NSSendFileTypes</key><array><string>public.item</string></array>
+    <key>NSSendTypes</key><array><string>public.utf8-plain-text</string><string>public.url</string></array>
+  </dict></array>
+  <key>NSAppleEventsUsageDescription</key><string>Stash uses Apple Events to show files in Finder.</string>
+</dict>
+</plist>
