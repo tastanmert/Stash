@@ -258,7 +258,7 @@ struct TitlePill: View {
         Button(action: action) {
             HStack(spacing: 4) {
                 // At most 80 pt wide; a longer name scrolls inside that width instead of pushing into the chevron.
-                MarqueeText(text: title, font: .system(size: 12))
+                MarqueeText(text: title, font: .system(size: 12), scrolling: hover)
                     .frame(width: min((title as NSString).size(withAttributes: [.font: NSFont.systemFont(ofSize: 12)]).width.rounded(.up) + 1, 80))
                 Image(systemName: "chevron.right").font(.system(size: 11)).foregroundStyle(.secondary)
             }
@@ -273,10 +273,12 @@ struct TitlePill: View {
     }
 }
 
-/// Text that slides sideways when it is wider than its frame.
+/// Text that slides sideways while `scrolling` when it is wider than its frame.
+/// Only on demand: an endless scroll redraws every frame and keeps idle shelves busy.
 struct MarqueeText: View {
     let text: String
     let font: Font
+    let scrolling: Bool
     @State private var textWidth: CGFloat = 0
     @State private var boxWidth: CGFloat = 0
     @State private var offset: CGFloat = 0
@@ -296,16 +298,19 @@ struct MarqueeText: View {
                     .offset(x: overflow ? offset : 0)
                     .frame(width: box.size.width, alignment: overflow ? .leading : .center)
                     .clipped()
-                    .mask(LinearGradient(stops: overflow ? [.init(color: .clear, location: 0), .init(color: .black, location: 0.08), .init(color: .black, location: 0.92), .init(color: .clear, location: 1)] : [.init(color: .black, location: 0), .init(color: .black, location: 1)], startPoint: .leading, endPoint: .trailing))
+                    .mask(LinearGradient(stops: overflow ? [.init(color: scrolling ? .clear : .black, location: 0), .init(color: .black, location: 0.08), .init(color: .black, location: 0.92), .init(color: .clear, location: 1)] : [.init(color: .black, location: 0), .init(color: .black, location: 1)], startPoint: .leading, endPoint: .trailing))
                     .onAppear { boxWidth = box.size.width; restart(overflow: overflow) }
                     .onChange(of: textWidth) { restart(overflow: textWidth > box.size.width + 1) }
+                    .onChange(of: scrolling) { restart(overflow: overflow) }
                 }
             }
     }
 
     private func restart(overflow: Bool) {
-        offset = 0
-        guard overflow else { return }
+        var reset = Transaction()
+        reset.disablesAnimations = true
+        withTransaction(reset) { offset = 0 }
+        guard overflow, scrolling else { return }
         let distance = textWidth + 28
         withAnimation(.linear(duration: Double(distance) / 30).delay(1).repeatForever(autoreverses: false)) {
             offset = -distance
